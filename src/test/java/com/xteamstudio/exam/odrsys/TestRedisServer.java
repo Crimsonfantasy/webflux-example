@@ -1,4 +1,4 @@
-package com.xteamstudio.exam.order_system;
+package com.xteamstudio.exam.odrsys;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;

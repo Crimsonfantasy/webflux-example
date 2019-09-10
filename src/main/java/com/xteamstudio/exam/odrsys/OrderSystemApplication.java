@@ -1,4 +1,4 @@
-package com.xteamstudio.exam.order_system;
+package com.xteamstudio.exam.odrsys;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

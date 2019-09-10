@@ -1,4 +1,4 @@
-package com.xteamstudio.exam.order_system;
+package com.xteamstudio.exam.odrsys;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
