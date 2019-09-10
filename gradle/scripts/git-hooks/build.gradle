@@ -1,0 +1,6 @@
+
+task installGitHooks(type: Copy) {
+  from rootProject.file("git-hooks")
+  into { new File(rootProject.rootDir, '.git/hooks') }
+  fileMode 0777
+}

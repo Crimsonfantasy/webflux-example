@@ -1,0 +1,67 @@
+class LocalProperties {
+  private static localProperties;
+
+  static void refresh(Project project) {
+    localProperties = new Properties()
+    def propertyFile = project.file("local.properties")
+    if (propertyFile.exists()) {
+      localProperties.load(propertyFile.newInputStream())
+    }
+  }
+
+  static Properties get(Project project) {
+    if (localProperties == null) {
+      refresh(project)
+    }
+    return localProperties;
+  }
+}
+
+project.afterEvaluate {
+  LocalProperties.refresh(project)
+}
+
+/**
+ * find the property according to order :
+ * local.properties in project root
+ * gradle.properties
+ * system properties (System.getProperty)
+ * system env (System.getenv)
+ */
+ext.getPropOr = { String key, String defaultValue ->
+  try {
+    return mustHaveProp(key)
+  } catch (e) {
+    return defaultValue
+  }
+}
+
+ext.mustHaveProp = { String key ->
+  String result = System.getenv(key)
+  String source = "env properties";
+  if (result == null) {
+    source = "system properties";
+    result = System.getProperty(key)
+  }
+  if (result == null) {
+    source = "project properties";
+    result = project.getProperties().get(key)
+  }
+  if (result == null) {
+    result = LocalProperties.get(project).get(key)
+    source = "local.properties";
+  }
+  if (result != null) {
+    logger.lifecycle("using prop ${String.format("%-40s", key)} from '${source}'")
+    return result
+  } else {
+    throw new IllegalArgumentException("property with key '${key}' not found")
+  }
+}
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+  jcenter()
+  google()
+}
