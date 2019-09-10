@@ -1,6 +1,6 @@
 ### Java Coding Test - Order system
 
-Welcome contestants, Please follow the instruction below and try your best finish, good luck!
+Welcome contestants, Please follow the instruction below and try your best to finish, good luck!
 
 #### Requirement
 `JDK 8+`
