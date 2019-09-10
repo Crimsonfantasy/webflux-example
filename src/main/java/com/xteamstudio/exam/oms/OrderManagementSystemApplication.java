@@ -1,13 +1,13 @@
-package com.xteamstudio.exam.odrsys;
+package com.xteamstudio.exam.oms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OrderSystemApplication {
+public class OrderManagementSystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OrderSystemApplication.class, args);
+        SpringApplication.run(OrderManagementSystemApplication.class, args);
     }
 
 }
