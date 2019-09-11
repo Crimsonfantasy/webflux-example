@@ -1,4 +1,4 @@
-### Java Coding Test - Order Management system
+### Java Coding Test - Lottery Order Management system
 
 Welcome contestants, Please follow the instruction below and try your best to finish, good luck!
 
