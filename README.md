@@ -7,7 +7,7 @@ Welcome contestants, Please follow the instruction below and try your best to fi
 
 `Intellij or Eclipse`
 
-`Mac OS (Using Windows, you should be award of next step: installGitHooks)`
+`Mac OS (Using Windows, you should beware of next step: installGitHooks)`
 
 #### Project setup
 
