@@ -1,5 +1,6 @@
 package com.xteamstudio.exam.oms.entity;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "SIX_NUMBER_ORDER_DETAIL")
-public class SixNumberOrderDetailEntity {
+public class SixNumberOrderDetailEntity implements Serializable {
 
     @Id
     @Column(name = "ID")

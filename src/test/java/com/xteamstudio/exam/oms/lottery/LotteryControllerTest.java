@@ -17,6 +17,7 @@ import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -34,9 +35,21 @@ public class LotteryControllerTest {
     private String password = "fenrir";
     private String base64encodedUsernameAndPassword;
 
+    private EmbeddedRedisTestConfiguration testRedis;
+
+    @Autowired
+    public void setTestRedis(EmbeddedRedisTestConfiguration testRedis) {
+        this.testRedis = testRedis;
+    }
+
     @Before
     public void before() {
         this.base64encodedUsernameAndPassword = base64Encode(username + ":" + password);
+    }
+
+    @Test
+    public void setStopRedis() {
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> testRedis.stopRedis()));
     }
 
     @Test

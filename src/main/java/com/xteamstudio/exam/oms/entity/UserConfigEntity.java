@@ -1,5 +1,6 @@
 package com.xteamstudio.exam.oms.entity;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USER_CONFIG")
-public class UserConfigEntity {
+public class UserConfigEntity implements BasicUserModel, Serializable {
 
     @Id
     @Column(name = "UID")

@@ -1,5 +1,6 @@
 package com.xteamstudio.exam.oms.entity;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,7 +9,7 @@ import javax.persistence.Version;
 
 @Entity
 @Table(name = "USER_BALANCE")
-public class UserBalanceEntity {
+public class UserBalanceEntity implements Serializable {
 
     @Id
     @Column(name = "UID")

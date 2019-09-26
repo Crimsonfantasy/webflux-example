@@ -1,5 +1,6 @@
 package com.xteamstudio.exam.oms.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -13,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "SIX_NUMBER_ORDER")
-public class SixNumberEntity {
+public class SixNumberEntity implements Serializable {
 
     @Id
     @Column(name = "ORDER_ID")
